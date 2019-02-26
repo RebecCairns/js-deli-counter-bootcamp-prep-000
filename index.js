@@ -1,12 +1,21 @@
-function takeANumber(arr, name){
-  arr.push(name);
-  return "Welcome, " + name + ". You are number " + (arr.length) + " in line.";
+function takeANumber(arr){
+   var num = arr.length;
+   arr.push(num);
+   Return `Currently serving ${num+1}`;
 }
+//C
+
+
+// function takeANumber(arr, name){
+//   arr.push(name);
+//   return `Welcome, ${name}. You are number ${arr.length} in line.`;
+// }
+
 function nowServing(deliLine){
-  if(deliLine.length > 1 && deliLine !== undefined){
+  if(deliLine.length >= 1 && deliLine !== undefined){
     var person = deliLine[0];
     deliLine.shift();
-    return "Currently serving " + person + ".";
+    return `Currently serving ${person}.`;
      
   }
   if(deliLine.length < 1 || deliLine === undefined){
@@ -16,18 +25,17 @@ function nowServing(deliLine){
 function currentLine(line){
   var output;
   var w = 0;
-  if(line.length > 1 && line !== undefined){
+  if(line.length >= 1 && line !== undefined){
     output = "The line is currently: ";
     for(let i = 0; i<line.length - 1; i++){
       
-      output += (w + 1) + ". " + line[w] + ", ";
+      output += `${w + 1}. ${line[w]}, `;
       w++;
     }
-    //w++;
-     output += (w + 1) + ". " + line[w];
+     output += `${w + 1}. ${line[w]}`;
      return output;
   }
-  if(line.length < 1 || line === undefined){
+  if(line.length < 1 ){
     return "The line is currently empty.";
   }
 }
